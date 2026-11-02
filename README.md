@@ -2,9 +2,9 @@
 
 A reproducible six-category Amharic news classification project: audited dataset processing, classical baselines, AfroXLMR-mini fine-tuning, held-out evaluation, aggregate error analysis, and a bilingual Gradio demo.
 
-**Source:** This is a local-only Git repository; no GitHub remote or push was configured.  
-**Hugging Face model:** [`klohdfhk/amharic-news-classifier`](https://huggingface.co/klohdfhk/amharic-news-classifier)  
-**Hugging Face Space:** Not published: Hugging Face returned HTTP 402 for CPU Basic and free ZeroGPU creation. The local Gradio app is included; no paid hardware was attempted.
+**GitHub repository:** [bereket74/amharic-news-classifier](https://github.com/bereket74/amharic-news-classifier) (source code only; no raw dataset or model weights are stored here)
+**Hugging Face model:** [`klohdfhk/amharic-news-classifier`](https://huggingface.co/klohdfhk/amharic-news-classifier) (already public; license basis and article-rights caveat are described below)
+**Hugging Face Space:** Not published. Free ZeroGPU creation was rejected with HTTP 402; a browser-only model artifact is not being distributed while underlying article rights remain unresolved. No paid hardware or credits were enabled.
 
 ## What it predicts
 
@@ -53,7 +53,7 @@ python scripts/error_analysis.py
 python scripts/build_release.py --output-dir release/project04-v1
 ```
 
-`prepare_data.py` downloads only the pinned public dataset revision and stores raw/processed data in Git-ignored folders. Training writes its benchmark artifacts under `runs/benchmark/`. If a GPU is available the transformer uses it; otherwise it runs on CPU.
+`prepare_data.py` downloads only the pinned public dataset revision, verifies cached and downloaded CSVs against the immutable Hub SHA-256 values, and stores raw/processed data in Git-ignored folders. Training writes its benchmark artifacts under `runs/benchmark/`. The pinned `requirements.txt` installs CPU-only PyTorch and is the verified reproduction environment for the reported metrics. The training code selects CUDA only if you separately install a compatible CUDA-enabled PyTorch build; GPU training was not used for these results.
 
 To serve a locally trained model with Gradio:
 
