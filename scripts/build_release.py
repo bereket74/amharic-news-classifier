@@ -15,7 +15,7 @@ from amharic_news.data import (
     MODEL_REPO,
     MODEL_REVISION,
 )
-from amharic_news.labels import PUBLISHED_MODEL_ID
+from amharic_news.labels import GITHUB_REPO_URL, PUBLISHED_MODEL_ID
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -86,6 +86,8 @@ tags:
 
 A six-way Amharic news-topic classifier fine-tuned from AfroXLMR-mini. This repository contains the model and inference code, not source articles or dataset rows.
 
+**Source code:** [Public GitHub repository]({GITHUB_REPO_URL})
+
 ## Labels
 
 {labels}
@@ -100,7 +102,7 @@ The source training partition contains {full_train_n:,} cleaned training example
 
 Transformer test accuracy: **{test["accuracy"]:.3f}**; macro-F1: **{test["macro_f1"]:.3f}** (2,000-resample 95% row-bootstrap interval **{low:.3f}–{high:.3f}**); weighted-F1: **{test["weighted_f1"]:.3f}**; balanced accuracy: **{test["balanced_accuracy"]:.3f}**. The test set has {test_n:,} examples. The interval reflects row resampling of this fixed trained model, not variability across seeds.
 
-The best validation system overall was **{selected_display}**. The best classical baseline scored test macro-F1 {best_baseline_test:.3f}, versus {test["macro_f1"]:.3f} for this transformer. This transformer is released as an experimental benchmark artifact, not as the preferred classifier on this dataset. The project includes local Gradio demo code; no hosted Space is available.
+The best validation system overall was **{selected_display}**. The best classical baseline scored test macro-F1 {best_baseline_test:.3f}, versus {test["macro_f1"]:.3f} for this transformer. This transformer is an experimental benchmark artifact, not the preferred classifier on this dataset. A hosted Space has not been published: free ZeroGPU creation was rejected with HTTP 402, and no converted browser weights are being distributed while source-article rights remain unresolved.
 
 See `evaluation_metrics.json`, `data_audit.json`, and `error_analysis.md` for per-class scores, confusion counts, split audit, and aggregate-only error patterns. No error example includes article text.
 
@@ -137,7 +139,7 @@ The release includes `src/amharic_news/inference.py`, `labels.py`, and `text.py`
 
 ## Attribution and license
 
-Original project code is MIT licensed. The fine-tuned model is released with CC BY 4.0 attribution to the dataset authors, consistent with the dataset repository's declared license; the base model retains its MIT terms. This project's public artifacts contain no news article text. Dataset citation: Israel Abebe Azime and Nebil Mohammed, [“An Amharic News Text classification Dataset” (2021)](https://arxiv.org/abs/2103.05639).
+Original project code is MIT licensed. The Hugging Face model repository declares CC BY 4.0 with attribution to the dataset authors based on the dataset repository's license statement; this does not independently establish the copyright chain for underlying publisher articles. The base model retains its MIT terms. This project's public artifacts contain no news article text. Dataset citation: Israel Abebe Azime and Nebil Mohammed, [“An Amharic News Text classification Dataset” (2021)](https://arxiv.org/abs/2103.05639).
 '''
 
 

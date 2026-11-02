@@ -4,6 +4,7 @@ MODEL_REPO = "Davlan/afro-xlmr-mini"
 MODEL_REVISION = "bc04038b969667884bd83cdd37bed9559c2c3d9c"
 PUBLISHED_MODEL_ID = "klohdfhk/amharic-news-classifier"
 PUBLISHED_SPACE_ID = "klohdfhk/amharic-news-classifier-demo"
+GITHUB_REPO_URL = "https://github.com/bereket74/amharic-news-classifier"
 
 LABEL_NAMES = {
     "ቢዝነስ": "business",
