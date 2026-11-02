@@ -1,0 +1,118 @@
+{
+  "dataset_repo": "israel/Amharic-News-Text-classification-Dataset",
+  "dataset_revision": "b646090ef0d09981da9c9765c4d376b407aa5955",
+  "source_license_declared": "CC BY 4.0 (Hugging Face dataset card)",
+  "seed": 42,
+  "validation_fraction_of_clean_training_data": 0.2,
+  "minimum_ethiopic_letter_share": 0.1,
+  "raw_rows": {
+    "official_train": 41186,
+    "official_test": 10297
+  },
+  "rows_with_valid_labels": {
+    "official_train": 41185,
+    "official_test": 10297
+  },
+  "removed_rows_with_missing_labels": {
+    "official_train": 1,
+    "official_test": 0
+  },
+  "nonempty_rows": {
+    "official_train": 41185,
+    "official_test": 10297
+  },
+  "rows_after_ethiopic_script_screen": {
+    "official_train": 40805,
+    "official_test": 10205
+  },
+  "removed_empty_rows": {
+    "official_train": 0,
+    "official_test": 0
+  },
+  "removed_below_script_threshold": {
+    "official_train": 380,
+    "official_test": 92
+  },
+  "excluded_category_counts_below_script_threshold": {
+    "official_train": {
+      "national_news": 8,
+      "politics": 1,
+      "sports": 371
+    },
+    "official_test": {
+      "national_news": 1,
+      "politics": 1,
+      "sports": 90
+    }
+  },
+  "removed_conflicting_label_duplicate_rows": {
+    "official_train": 185,
+    "official_test": 8
+  },
+  "removed_same_label_duplicate_rows": {
+    "official_train": 425,
+    "official_test": 18
+  },
+  "cross_split_exact_overlaps_removed_from_training": 258,
+  "cross_split_exact_label_conflicts": 47,
+  "final_rows": {
+    "train": 31949,
+    "validation": 7988,
+    "test": 10179
+  },
+  "label_names": {
+    "ቢዝነስ": "business",
+    "መዝናኛ": "entertainment",
+    "ሀገር አቀፍ ዜና": "national_news",
+    "ፖለቲካ": "politics",
+    "ስፖርት": "sports",
+    "ዓለም አቀፍ ዜና": "world_news"
+  },
+  "label_descriptions": {
+    "business": "Business and economy",
+    "entertainment": "Entertainment and culture",
+    "national_news": "National and domestic news",
+    "politics": "Politics and government",
+    "sports": "Sports",
+    "world_news": "International news"
+  },
+  "label_counts": {
+    "train": {
+      "business": 2457,
+      "entertainment": 399,
+      "national_news": 13143,
+      "politics": 5925,
+      "sports": 6328,
+      "world_news": 3697
+    },
+    "validation": {
+      "business": 614,
+      "entertainment": 100,
+      "national_news": 3286,
+      "politics": 1481,
+      "sports": 1582,
+      "world_news": 925
+    },
+    "test": {
+      "business": 781,
+      "entertainment": 135,
+      "national_news": 4083,
+      "politics": 1848,
+      "sports": 2024,
+      "world_news": 1308
+    }
+  },
+  "notes": [
+    "Only headline and article body are model inputs; dates, source URLs, view counts, and row IDs are excluded.",
+    "The supplied official test partition is screened, made unique by normalized exact text, and kept out of tuning and checkpoint selection.",
+    "Empty labels and exact text records with contradictory labels are excluded; identical same-label records are collapsed.",
+    "Exact training records that overlap the screened test partition are removed from training.",
+    "The 10% Ethiopic-letter threshold is a script heuristic, not proof of language identity; code-mixed text can remain.",
+    "Near-duplicate stories, source-level leakage, and copyright ownership of underlying publisher text are not independently adjudicated.",
+    "Source article text is not included in the public repository, model card, or Space bundle."
+  ],
+  "source_file_sha256": {
+    "train.csv": "446bab6e0380dd3b131115186aa87168ebe17a07c92b8290543dfc6ee48fa529",
+    "test.csv": "7deb14a8d01655b80e77d66ef495b1bf123b91ca450eacb3e470ed9ba220de73"
+  }
+}

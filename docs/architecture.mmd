@@ -1,0 +1,18 @@
+flowchart LR
+    A["Pinned CC BY 4.0 Amharic news corpus"] --> B["Unicode and whitespace normalization"]
+    B --> C["Ethiopic-script eligibility filter"]
+    C --> D["Exact duplicate audit<br/>train/test overlap removed"]
+    D --> E["Train / validation / untouched test"]
+    E --> F["Majority baseline"]
+    E --> G["Word / character TF-IDF + LinearSVC"]
+    E --> H["AfroXLMR-mini fine-tuning"]
+    F --> I["Macro-F1 checkpoint selection"]
+    G --> I
+    H --> I
+    I --> J["Held-out evaluation + bootstrap CI"]
+    J --> K["Aggregate error analysis"]
+    I --> L["Hugging Face model repository"]
+    L --> M["Gradio Space"]
+    L --> N["Local CLI and Gradio inference"]
+    O["No raw text in Git, model package, or demo"] -.-> L
+    O -.-> M
